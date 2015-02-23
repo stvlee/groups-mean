@@ -1,12 +1,12 @@
 {
-	"name": "meanjs",
-	"description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
-	"version": "0.3.3",
-	"private": false,
-	"author": "https://github.com/meanjs/mean/graphs/contributors",
+	"name": "Groups",
+	"description": "Forum full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
+	"version": "0.0.1",
+	"private": true,
+	"author": "Steve",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/meanjs/mean.git"
+		"url": "https://gitlab.com/bizllion/groupbot.git"
 	},
 	"engines": {
 		"node": ">=0.10.28",

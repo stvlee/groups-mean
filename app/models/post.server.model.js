@@ -4,48 +4,54 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
+    Schema = mongoose.Schema;
 
 /**
  * Post Schema
  */
 var PostSchema = new Schema({
-	name: {
-		type: String,
-		default: '',
-		required: 'Please fill Post name',
-		trim: true
-	},
+    name: {
+        type: String,
+        default: '',
+        required: 'Please fill Post name',
+        trim: true
+    },
+    description: {
+        type: String
+    },
     type: {
         type: String,
         default: 'P',
         required: 'Please fill post type',
         trim: true
     },
-	content: {
-		type: String
-	},
+    content: {
+        type: String
+    },
     url: {
-        type: String
+        type: String,
+        trim: true
     },
-    icon: {
-        type: String
+    iconUrl: {
+        type: String,
+        trim: true
     },
-    assets: {
+    items: {
         type: Schema.ObjectId,
-        ref: 'Asset'
+        ref: 'Postitem'
     },
-	updated: {
-		type: Date
-	},	
-	created: {
-		type: Date,
-		default: Date.now
-	},
-	user: {
-		type: Schema.ObjectId,
-		ref: 'User'
-	}
+    updated: {
+        type: Date,
+        default: Date.now
+    },
+    created: {
+        type: Date,
+        default: Date.now
+    },
+    user: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    }
 });
 
 mongoose.model('Post', PostSchema);

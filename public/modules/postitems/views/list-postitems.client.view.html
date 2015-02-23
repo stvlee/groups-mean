@@ -1,0 +1,19 @@
+<section data-ng-controller="PostitemsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Postitems</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="postitem in postitems" data-ng-href="#!/postitems/{{postitem._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="postitem.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="postitem.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="postitem.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!postitems.$resolved || postitems.length">
+    	No Postitems yet, why don't you <a href="/#!/postitems/create">create one</a>?
+    </div>
+</section>
