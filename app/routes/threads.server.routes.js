@@ -14,6 +14,8 @@ module.exports = function(app) {
 		.put(users.requiresLogin, threads.hasAuthorization, threads.update)
 		.delete(users.requiresLogin, threads.hasAuthorization, threads.delete);
 
+    app.route('/crawl').get(threads.crawl);
+
 	// Finish by binding the Thread middleware
 	app.param('threadId', threads.threadByID);
 };
