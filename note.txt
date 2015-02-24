@@ -1,0 +1,66 @@
+android
+
+
+dailer app, send music,voice, talk backgroup music
+dailer contact,
+smart call
+
+forum 抽獎機 plugin
+
+
+planning
+break down complex tasks
+
+read design sprint
+
+
+Problems
+slow load pages
+hard to find information
+polluted with ads
+
+
+A thread is a collection of posts, usually organized in a hierarchy
+A post is simply a message that has been submitted to a topic
+
+display forum index
+display thread index
+display post index
+
+start mongodb
+mongod.exe --dbpath C:\mongodb\data
+
+
+mongodb
+
+use group
+show dbs
+show collections
+
+collection
+posts
+users
+
+
+git
+https://gitlab.com/bizllion/groupbot.git
+
+set NODE_ENV=development
+grunt
+
+set NODE_ENV=production
+grunt
+
+yo generator
+yo meanjs:crud-module m
+downloads
+
+functions:
+data folder
+db backup
+
+optimization
+cache settings
+防註冊機
+
+站點廣告

@@ -4,7 +4,8 @@ module.exports = {
 	app: {
 		title: 'Groups',
 		description: 'Groups SPA',
-		keywords: 'forum, mongodb, express, angularjs, node.js, mongoose, passport'
+		keywords: 'forum, mongodb, express, angularjs, node.js, mongoose, passport',
+        dataPath: 'data'
 	},
 	port: process.env.PORT || 3000,
 	templateEngine: 'swig',

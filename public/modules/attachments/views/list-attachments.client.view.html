@@ -1,0 +1,19 @@
+<section data-ng-controller="AttachmentsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Attachments</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="attachment in attachments" data-ng-href="#!/attachments/{{attachment._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="attachment.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="attachment.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="attachment.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!attachments.$resolved || attachments.length">
+    	No Attachments yet, why don't you <a href="/#!/attachments/create">create one</a>?
+    </div>
+</section>

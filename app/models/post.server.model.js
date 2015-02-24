@@ -10,6 +10,16 @@ var mongoose = require('mongoose'),
  * Post Schema
  */
 var PostSchema = new Schema({
+    /**
+    thread: {
+        type: Schema.ObjectId,
+        ref: 'Thread'
+    },
+    forum: {
+        type: Schema.ObjectId,
+        ref: 'Forum'
+    },**/
+    //subject
     name: {
         type: String,
         default: '',
@@ -27,6 +37,10 @@ var PostSchema = new Schema({
     },
     content: {
         type: String
+    },
+    position: {
+        type: Number,
+        default: 0
     },
     url: {
         type: String,
@@ -48,6 +62,7 @@ var PostSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    //author
     user: {
         type: Schema.ObjectId,
         ref: 'User'
