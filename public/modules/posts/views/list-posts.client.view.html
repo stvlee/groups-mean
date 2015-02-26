@@ -40,8 +40,8 @@
             <a href="#" class="thumbnail">
                 <img class="img-responsive" ng-src="{{post.thumbUrl}}"/>
             </a>
-
-            <p>{{post.content}}</p>
+            
+            <p class="content" ng-bind-html="post.content"></p>
             <small class="list-group-item-text">
                 Posted on
                 <span data-ng-bind="post.created | date:'medium'"></span>
