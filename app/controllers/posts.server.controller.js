@@ -41,6 +41,13 @@ var crawlFreedl = function (page) {
                     post.thumbUrl = thumbUrl;
                     post.content = content;
 
+                    post.save(function(err) {
+                        if (err) {
+                            console.error(chalk.red(errorHandler.getErrorMessage(err)));
+                        } else {
+                            console.log(chalk.green('saved subject:' + subject));
+                        }
+                    });
                 }
             }
         );
