@@ -37,7 +37,8 @@ var crawlFreedl = function (page) {
 
                         if (attnm){
                             console.log('page:'+i);
-                            console.log('date:'+new Date(date.trim()));
+                            console.log('date string:'+date.trim());
+                            console.log('date:'+new Date('2015/' +date.trim()));
                             console.log('url:'+url);
                             console.log('subject:'+subject);
                             console.log('content:'+content);

@@ -38,7 +38,7 @@ var crawlFreedl = function (page) {
 
                     var post = new Post();
                     post.subject = subject;
-                    post.created = new Date(date.trim());
+                    post.created = new Date('2015/' +date.trim());
                     post.thumbUrl = thumbUrl;
                     post.content = content;
 
@@ -137,7 +137,7 @@ var crawlHkepc = function (page) {
 exports.crawl = function(req, res) {
     console.log(chalk.green('Start crawl...'));
 
-    crawlFreedl(20);
+    crawlFreedl(req.query.page);
 
     res.send('<p>Started</p>');
     //return res.status(200);
