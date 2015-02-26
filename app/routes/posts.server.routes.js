@@ -14,6 +14,12 @@ module.exports = function(app) {
 		.put(users.requiresLogin, posts.hasAuthorization, posts.update)
 		.delete(users.requiresLogin, posts.hasAuthorization, posts.delete);
 
+    //clean all
+    app.route('/postsclean/')
+        .get(posts.clean);
+
+    app.route('/crawl').get(posts.crawl);
+
 	// Finish by binding the Post middleware
 	app.param('postId', posts.postByID);
 };

@@ -1,9 +1,9 @@
 <section data-ng-controller="PostsController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1 data-ng-bind="post.name"></h1>
+		<h1 data-ng-bind="post.subject"></h1>
 	</div>
     <div class="post-detail">
-        <img class="icon" ng-src="{{post.iconUrl}}" />
+        <img class="icon" ng-src="{{post.thumbUrl}}" />
         <p class="content" ng-bind-html="post.content"></p>
 
     </div>

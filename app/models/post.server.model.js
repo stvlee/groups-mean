@@ -18,35 +18,41 @@ var PostSchema = new Schema({
     forum: {
         type: Schema.ObjectId,
         ref: 'Forum'
-    },**/
-    //subject
-    name: {
+    },
+     name: {
         type: String,
         default: '',
         required: 'Please fill Post name',
         trim: true
     },
-    description: {
-        type: String
-    },
+     **/
     type: {
         type: String,
         default: 'P',
         required: 'Please fill post type',
         trim: true
     },
+    subject: {
+        type: String,
+        default: '',
+        required: 'Please fill Subject',
+        trim: true
+    },
     content: {
+        type: String
+    },
+    description: {
         type: String
     },
     position: {
         type: Number,
         default: 0
     },
-    url: {
+    thumbUrl: {
         type: String,
         trim: true
     },
-    iconUrl: {
+    url: {
         type: String,
         trim: true
     },

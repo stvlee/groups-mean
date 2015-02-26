@@ -4,9 +4,85 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
+    Crawler = require('crawler'),
+    chalk = require('chalk'),
+    url = require('url'),
 	errorHandler = require('./errors.server.controller'),
 	Post = mongoose.model('Post'),
 	_ = require('lodash');
+
+/**
+ * Crawl
+ */
+exports.crawl = function(req, res) {
+    console.log(chalk.green('Start crawl...'));
+
+    var crawl = new Crawler({
+        maxConnections: 1,
+        // This will be called for each crawled page
+        callback: function (error, result, $) {
+            if(error){
+                console.error(chalk.red('Crawl error: ', error));
+            }else{
+                $('[id^=normalthread]').each(function(index, a) {
+                        //console.log('subject:' + $(a).find('a').text());
+                        //console.log('img:http://www.hkepc.com/forum/' + $(a).find('img').attr('src'));
+                        var baseUrl = 'http://www.hkepc.com/forum/';
+                        var subject = $(a).find('.subject a').text();
+                        var img = baseUrl + $(a).find('img').attr('src');
+                        var href = baseUrl +  $(a).find('a').attr('href');
+
+                        //console.log('url:http://www.hkepc.com/forum/' +$(a).find('a').attr('href'));
+
+                        crawl.queue([{
+                            uri: href,
+                            callback: function (error, result, $) {
+                                //$('[id^=threadtitle]').each(function(index, a) {
+//								console.log($(a).find('h1').text());
+                                //});
+
+                                if(error){
+                                    console.error(chalk.red('Crawl error: ', error));
+                                }else{
+                                    $('[id^=postmessage]').each(function(index, a) {
+
+                                        if (index === 0){
+                                            //console.log('subject:' + subject);
+                                            //console.log('img:' + img);
+                                            //console.log('content:' + $(a).text());
+                                            var content = $(a).text();
+
+                                            var post = new Post();
+                                            post.subject = subject;
+                                            post.thumbUrl = img;
+                                            post.content = content;
+
+                                            post.save(function(err) {
+                                                if (err) {
+                                                    console.error(chalk.red(errorHandler.getErrorMessage(err)));
+                                                } else {
+                                                    console.log(chalk.green('saved subject:' + subject));
+                                                }
+                                            });
+                                        }
+
+                                    });
+                                }
+                            }
+                        }]);
+
+
+                    }
+                );
+            }
+        }
+    });
+
+    crawl.queue([{uri: 'http://www.hkepc.com/forum/forumdisplay.php?fid=26'}]);
+
+    res.send('<p>Started</p>');
+    //return res.status(200);
+};
 
 /**
  * Create a Post
@@ -67,6 +143,22 @@ exports.delete = function(req, res) {
 			res.jsonp(post);
 		}
 	});
+};
+
+/**
+ * Clean
+ */
+exports.clean = function(req, res) {
+    Post.remove(function(err) {
+        if (err) {
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
+        } else {
+            //res.jsonp(post);
+            res.send('<p>clean finished</p>');
+        }
+    });
 };
 
 /**

@@ -2,27 +2,57 @@
     <div class="page-header">
         <h1>Posts</h1>
     </div>
-    <div class="list-group" style="height: 25px">
-        <a data-ng-repeat="post in posts" data-ng-href="#!/posts/{{post._id}}" class="list-group-item">
-            <div class="gallery">
-            <ul class="img-thumbnails clearfix">
-                <li class="small-image pull-left thumbnail" >
-                    <img class="img-responsive icon" ng-src="{{post.iconUrl}}" />
-                </li>
-            </ul>
-            </div>
+    <!--<div class="list-group" style="height: 25px">-->
+    <!--<a data-ng-repeat="post in posts" data-ng-href="#!/posts/{{post._id}}" class="list-group-item">-->
+    <!--<div class="gallery">-->
+    <!--<ul class="img-thumbnails clearfix">-->
+    <!--<li class="small-image pull-left thumbnail" >-->
+    <!--<img class="img-responsive icon" ng-src="{{post.iconUrl}}" />-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
 
 
-			<small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="post.created | date:'medium'"></span>
-				by
-				<span data-ng-bind="post.user.displayName"></span>
-			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="post.name"></h4>
-        </a>
-    </div>
+    <!--<small class="list-group-item-text">-->
+    <!--Posted on-->
+    <!--<span data-ng-bind="post.created | date:'medium'"></span>-->
+    <!--by-->
+    <!--<span data-ng-bind="post.user.displayName"></span>-->
+    <!--</small>-->
+    <!--<h4 class="list-group-item-heading" data-ng-bind="post.name"></h4>-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <accordion close-others="true">
+        <accordion-group data-ng-repeat="post in posts | orderBy:created">
+            <accordion-heading>
+
+                <!--<div class="col-sm-2">-->
+
+                <!--</div>-->
+                <!--<div class="col-sm-10">-->
+                    {{post.subject}}
+                <!--</div>-->
+                <!--<div class="col-sm-2">-->
+                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                <!--</div>-->
+            </accordion-heading>
+            <a href="#" class="thumbnail">
+                <img class="img-responsive" ng-src="{{post.thumbUrl}}"/>
+            </a>
+
+            <p>{{post.content}}</p>
+            <small class="list-group-item-text">
+                Posted on
+                <span data-ng-bind="post.created | date:'medium'"></span>
+                by
+                <span data-ng-bind="post.user.displayName"></span>
+            </small>
+        </accordion-group>
+    </accordion>
+
+
     <div class="alert alert-warning text-center" data-ng-hide="!posts.$resolved || posts.length">
-    	No Posts yet, why don't you <a href="/#!/posts/create">create one</a>?
+        No Posts yet, why don't you <a href="/#!/posts/create">create one</a>?
     </div>
 </section>

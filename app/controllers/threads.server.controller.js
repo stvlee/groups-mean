@@ -4,52 +4,11 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-    Crawler = require('crawler'),
-    url = require('url'),
-    querystring = require('querystring'),
-    chalk = require('chalk'),
 	errorHandler = require('./errors.server.controller'),
 	Thread = mongoose.model('Thread'),
 	_ = require('lodash');
 
-/**
- * Crawl
- */
-exports.crawl = function(req, res) {
 
-    console.log(chalk.green('Start crawl...'));
-
-
-    var crawl = new Crawler({
-        maxConnections: 10,
-        // This will be called for each crawled page
-        callback: function (error, result, $) {
-        }
-    });
-
-    crawl.queue([{
-        uri: 'http://www.hkepc.com/forum/forumdisplay.php?fid=168&page=1',
-        callback: function (error, result, $) {
-            if(error){
-                console.error(chalk.red('Crawl error: ', error));
-            }
-
-            //console.log(chalk.green('Crawl result: ' + result.body));
-
-            $('[id^=normalthread]').each(function(index, a) {
-                console.log(chalk.green($(a).find('a').text()));
-                //console.log($(a).find('a').attr('href'));
-                //console.log($(a).find('.attnm').find('a').text());
-                //console.log($(a).find('.tsubject a').attr('href'));
-                //console.log($(a).attr('id'));
-            });
-
-        }
-    }]);
-
-    res.send('<p>Started</p>');
-    //return res.status(200);
-};
 
 /**
  * Create a Thread
