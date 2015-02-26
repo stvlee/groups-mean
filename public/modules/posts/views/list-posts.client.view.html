@@ -41,6 +41,8 @@
                 <img class="img-responsive" ng-src="{{post.thumbUrl}}"/>
             </a>
 
+            <iframe src="{{post.thumbUrl  | trustAsResourceUrl}}"> </iframe>
+
             <p class="content" ng-bind-html="post.content"></p>
             <small class="list-group-item-text">
                 Posted on
