@@ -14,7 +14,8 @@ var mongoose = require('mongoose'),
 
 var crawlFreedl = function (page) {
     var crawler = new Crawler({
-        maxConnections: 1
+        maxConnections: 1,
+        forceUTF8:true
     });
 
     var cb = function (error, result, $) {
@@ -23,7 +24,7 @@ var crawlFreedl = function (page) {
                 var url = baseUrl + $(a).find('td.bgb a').attr('href');
                 var subject = $(a).find('td.bgb font').text();
                 var date = ($(a).find('td.bgc tt').text().split('Date:')[1]);
-                var content = $(a).find('td.bgc blockquote').text();
+                var content = $(a).find('td.bgc blockquote').html();
                 var thumbUrl =  $(a).find('td.bgc blockquote a').first().attr('href');
                 var attnm = $(a).find('td.bgc blockquote a').last().attr('href');
 
