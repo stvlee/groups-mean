@@ -1,0 +1,16 @@
+{
+  "name": "webbot",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Steve",
+  "license": "ISC",
+  "dependencies": {
+    "crawler": "^0.4.1",
+	"chalk": "~0.5",
+    "express": "^4.11.2"
+  }
+}

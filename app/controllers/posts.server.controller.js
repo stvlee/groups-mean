@@ -11,12 +11,54 @@ var mongoose = require('mongoose'),
 	Post = mongoose.model('Post'),
 	_ = require('lodash');
 
-/**
- * Crawl
- */
-exports.crawl = function(req, res) {
-    console.log(chalk.green('Start crawl...'));
 
+var crawlFreedl = function (page) {
+    var crawler = new Crawler({
+        maxConnections: 1
+    });
+
+    var cb = function (error, result, $) {
+        $('table.brdr').each(function (index, a) {
+                //var img = baseUrl + $(a).find('td.bgb').attr('src');
+                var url = baseUrl + $(a).find('td.bgb a').attr('href');
+                var subject = $(a).find('td.bgb font').text();
+                var date = ($(a).find('td.bgc tt').text().split('Date:')[1]);
+                var content = $(a).find('td.bgc blockquote').text();
+                var thumbUrl =  $(a).find('td.bgc blockquote a').first().attr('href');
+                var attnm = $(a).find('td.bgc blockquote a').last().attr('href');
+
+                if (attnm){
+                    //console.log('curpage:'+i);
+                    //console.log('date:'+date.trim());
+                    //console.log('url:'+url);
+                    //console.log('subject:'+subject);
+                    //console.log('content:'+content);
+                    //console.log('attnm:'+attnm);
+
+                    var post = new Post();
+                    post.subject = subject;
+                    post.created = new Date(date.trim());
+                    post.thumbUrl = thumbUrl;
+                    post.content = content;
+
+                }
+            }
+        );
+        console.log('Grabbed page: ', page, ' ', result.body.length, 'bytes');
+    };
+
+    var baseUrl = 'http://www.freedl.org/treebbs2rss/treebbs2rss/';
+    for (var i = 0; i < page; i++) {
+        var curpage = i+1;
+        crawler.queue([{
+            uri: ('http://www.freedl.org/treebbs2rss/treebbs2rss/tree.php?mode=dump&page=' + curpage),
+            callback: cb
+        }]);
+
+    }
+};
+
+var crawlHkepc = function (page) {
     var crawl = new Crawler({
         maxConnections: 1,
         // This will be called for each crawled page
@@ -79,6 +121,15 @@ exports.crawl = function(req, res) {
     });
 
     crawl.queue([{uri: 'http://www.hkepc.com/forum/forumdisplay.php?fid=26'}]);
+};
+
+/**
+ * Crawl
+ */
+exports.crawl = function(req, res) {
+    console.log(chalk.green('Start crawl...'));
+
+    crawlFreedl(20);
 
     res.send('<p>Started</p>');
     //return res.status(200);
