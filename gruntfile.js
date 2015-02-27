@@ -14,6 +14,51 @@ module.exports = function(grunt) {
 	// Project Configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+        /*
+         deploy: {
+         production: {
+         // source git repository to fetch release from
+         repository: 'https://bizllion@gitlab.com/bizllion/groupbot.git',
+         // Repository branch. Default: 'master'
+         branch: 'master',
+
+         // amount of releases to keep on the server. Default: 3
+         keepReleases: 5,
+
+         // server options
+         user:     'steve',
+         domain:   'bangav.com',
+         deployTo: '/opt/www/bangav.com',
+
+         // your tasks
+         tasks: {
+         afterNpm: function (run) {
+         run('cd {{latestRelease}}; grunt build');
+         //run('mv {{latestRelease}}/{site,public}');
+         },
+
+         restart: function (run) {
+         run('sudo systemctl stop groupbot');
+         }
+         }
+         }
+
+         //liveservers: {
+         //    options:{
+         //        servers: [{
+         //            host: 'bangav.com',
+         //            port: 22,
+         //            username: 'steve',
+         //            password: 'Vpsdime3use'
+         //        }],
+         //        cmds_before_deploy: [],
+         //        cmds_after_deploy: ["sudo systemctl restart groupbot", "sudo systemctl status groupbot"],
+         //        deploy_path: '/opt/groupbot1'
+         //    }
+         //}
+         },
+        */
+
 		watch: {
 			serverViews: {
 				files: watchFiles.serverViews,
@@ -50,7 +95,7 @@ module.exports = function(grunt) {
 			},
 			mochaTests: {
 				files: watchFiles.mochaTests,
-				tasks: ['test:server'],
+				tasks: ['test:server']
 			}
 		},
 		jshint: {
