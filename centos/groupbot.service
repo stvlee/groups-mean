@@ -1,0 +1,12 @@
+[Service]
+ExecStart=/home/steve/.nvm/versions/node/v0.12.0/bin/node /opt/groupbot/server.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=groupbot
+User=steve
+Group=steve
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
