@@ -59,6 +59,31 @@ module.exports = function(grunt) {
          },
         */
 
+        sshconfig: {
+            "bangav": grunt.file.readJSON('bangav.json')
+        },
+
+        sshexec: {
+            test: {
+                command: 'uptime',
+                options: {
+                    config: 'bangav'
+                }
+            },
+            deploy: {
+                command: [
+                    'cd /opt/groupbot',
+                    'git pull origin master',
+                    'npm update',
+                    'bower update',
+                    'grunt build',
+                    'sudo systemctl restart groupbot'].join(' && '),
+                options: {
+                    config: 'bangav'
+                }
+            }
+        },
+
 		watch: {
 			serverViews: {
 				files: watchFiles.serverViews,
@@ -225,4 +250,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('test', ['test:server', 'test:client']);
 	grunt.registerTask('test:server', ['env:test', 'mochaTest']);
 	grunt.registerTask('test:client', ['env:test', 'karma:unit']);
+
+    grunt.registerTask('deploy', ['sshexec:deploy']);
 };
