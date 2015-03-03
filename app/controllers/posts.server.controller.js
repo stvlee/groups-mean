@@ -68,76 +68,67 @@ var crawlFreedl = function (page) {
 
 var crawlHkepc = function (page) {
     var crawl = new Crawler({
-        maxConnections: 1,
-        // This will be called for each crawled page
-        callback: function (error, result, $) {
-            if(error){
-                console.error(chalk.red('Crawl error: ', error));
-            }else{
-                $('[id^=normalthread]').each(function(index, a) {
-                        //console.log('subject:' + $(a).find('a').text());
-                        //console.log('img:http://www.hkepc.com/forum/' + $(a).find('img').attr('src'));
-                        var baseUrl = 'http://www.hkepc.com/forum/';
-                        var subject = $(a).find('.subject a').text();
-                        var img = baseUrl + $(a).find('img').attr('src');
-                        var href = baseUrl +  $(a).find('a').attr('href');
-
-                        //console.log('url:http://www.hkepc.com/forum/' +$(a).find('a').attr('href'));
-
-                        crawl.queue([{
-                            uri: href,
-                            callback: function (error, result, $) {
-                                //$('[id^=threadtitle]').each(function(index, a) {
-//								console.log($(a).find('h1').text());
-                                //});
-
-                                if(error){
-                                    console.error(chalk.red('Crawl error: ', error));
-                                }else{
-                                    $('[id^=postmessage]').each(function(index, a) {
-
-                                        if (index === 0){
-                                            //console.log('subject:' + subject);
-                                            //console.log('img:' + img);
-                                            //console.log('content:' + $(a).text());
-                                            var content = $(a).text();
-
-                                            var post = new Post();
-                                            post.subject = subject;
-                                            post.thumbUrl = img;
-                                            post.content = content;
-
-                                            post.save(function(err) {
-                                                if (err) {
-                                                    console.error(chalk.red(errorHandler.getErrorMessage(err)));
-                                                } else {
-                                                    console.log(chalk.green('saved subject:' + subject));
-                                                }
-                                            });
-                                        }
-
-                                    });
-                                }
-                            }
-                        }]);
-
-
-                    }
-                );
-            }
-        }
+        maxConnections: 1
     });
 
-    crawl.queue([{uri: 'http://www.hkepc.com/forum/forumdisplay.php?fid=26'}]);
+    var cb = function (error, result, $) {
+        if(error){
+            console.error(chalk.red('Crawl error: ', error));
+        }else{
+            $('[id^=normalthread]').each(function(index, a) {
+                    //console.log('subject:' + $(a).find('a').text());
+                    //console.log('img:http://www.hkepc.com/forum/' + $(a).find('img').attr('src'));
+                    var baseUrl = 'http://www.hkepc.com/forum/';
+                    var subject = $(a).find('.subject a').text();
+                    var img = baseUrl + $(a).find('img').attr('src');
+                    var href = baseUrl +  $(a).find('a').attr('href');
+
+                    //console.log('url:http://www.hkepc.com/forum/' +$(a).find('a').attr('href'));
+
+                    var thread = new Thread();
+                    thread.name = subject;
+                    thread.save(function(err) {
+                        if (err) {
+                            console.error(chalk.red(errorHandler.getErrorMessage(err)));
+                        } else {
+                            console.log(chalk.green('saved subject:' + subject));
+                        }
+                    });
+
+                }
+            );
+        }
+    }
+
+
+    var baseUrl = 'http://www.hkepc.com/forum/';
+    for (var i = 0; i < page; i++) {
+        var curpage = i+1;
+        console.log(chalk.green('saved subject:' + curpage));
+
+        //crawler.queue([{
+        //    uri: (baseUrl+ 'forumdisplay.php?fid=26&page=' + curpage),
+        //    callback: cb
+        //}]);
+    }
 };
 
 /**
  * Crawl
  */
-exports.crawl = function(req, res) {
+exports.crawlFreedl = function(req, res) {
     console.log(chalk.green('Start crawl...'));
 
     crawlFreedl(req.query.page);
+
+    res.send('<p>Started</p>');
+    //return res.status(200);
+};
+
+exports.crawlHkepc = function(req, res) {
+    console.log(chalk.green('Start crawl...'));
+
+    crawlHkepc(req.query.page);
 
     res.send('<p>Started</p>');
     //return res.status(200);

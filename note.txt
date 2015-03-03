@@ -64,3 +64,24 @@ cache settings
 防註冊機
 
 站點廣告
+
+
+
+SHOW TABLES
+  FROM bizllion_discuz
+  [LIKE 'pre31%']
+
+
+SELECT CONCAT( 'DROP TABLE IF EXISTS ',
+GROUP_CONCAT(TABLE_NAME) ) AS stmt
+FROM information_schema.TABLES
+WHERE TABLE_SCHEMA = 'bizllion_discuz' AND TABLE_NAME LIKE 'pre31%'
+
+select  CONCAT( 'DROP TABLE ', TABLE_NAME)
+FROM information_schema.TABLES
+WHERE TABLE_SCHEMA = 'bizllion_discuz' AND TABLE_NAME LIKE 'pre31%'
+
+Horizontal scaling is more complicated and is done using several machines. Each
+machine will handle a part of the load, providing better overall performance. The
+problem with horizontal database scaling is how to properly divide the data between
+different machines and how to manage the read/write operations between them.
