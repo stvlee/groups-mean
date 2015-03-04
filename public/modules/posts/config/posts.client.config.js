@@ -9,3 +9,10 @@ angular.module('posts').run(['Menus',
 		Menus.addSubMenuItem('topbar', 'posts', 'New Post', 'posts/create');
 	}
 ]);
+
+
+angular.module('posts').filter('trustAsResourceUrl', ['$sce', function($sce) {
+    return function(val) {
+        return $sce.trustAsResourceUrl(val);
+    };
+}]);

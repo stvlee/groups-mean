@@ -85,3 +85,10 @@ Horizontal scaling is more complicated and is done using several machines. Each
 machine will handle a part of the load, providing better overall performance. The
 problem with horizontal database scaling is how to properly divide the data between
 different machines and how to manage the read/write operations between them.
+
+summary section of a topic put under the topic
+
+post, context ranking
+auto enlarge high rank post,replies
+
+each reply can be add count,like
