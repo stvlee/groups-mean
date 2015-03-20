@@ -7,7 +7,7 @@ module.exports = {
 		keywords: 'forum, mongodb, express, angularjs, node.js, mongoose, passport',
         dataPath: 'data'
 	},
-	port: process.env.PORT || 3000,
+	port: process.env.PORT || 80,
 	templateEngine: 'swig',
 	// The secret should be set to a non-guessable string that
 	// is used to compute a session hash

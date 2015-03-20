@@ -18,7 +18,7 @@ module.exports = function(app) {
     app.route('/postsclean/')
         .get(posts.clean);
 
-    app.route('/crawl').get(posts.crawl);
+    app.route('/crawl').get(posts.crawlFreedl);
 
 	// Finish by binding the Post middleware
 	app.param('postId', posts.postByID);
