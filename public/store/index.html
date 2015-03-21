@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <!-- <meta name="viewport" content="width=device-width"> -->
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/jRating.jquery.css" media="screen" />
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-aa navbar-fixed-top">
+      <!-- <div class="container"> -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span style="font-weight:lighter;">APPS</span><span style="font-weight:bold;">ANGEL</span></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="index.html">主頁</a></li>
+            <li><a href="page2.html">探索</a></li>
+            <li><a href="#menu1">討論</a></li>
+            <li><a href="#menu1">關於</a></li>
+            <li><a href="#menu1">提交</a></li>
+            <!-- <li><a href="#menu1"><img src="img/menu_1.gif"/></a></li>
+            <li><a href="#menu2"><img src="img/menu_2.gif"/></a></li>
+            <li><a href="#menu3"><img src="img/menu_3.gif"/></a></li>
+            <li><a href="#menu4"><img src="img/menu_4.gif"/></a></li>
+            <li><a href="#menu5"><img src="img/menu_5.gif"/></a></li> -->
+
+            
+          </ul>
+          <ul class="nav navbar-nav  navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img style="width: 30px;height: auto;" src="img/menu_6_icon.png"/> 
+                <!-- <span style=""> -->
+                Simon Cheung
+                <!-- </span -->
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="img/menu_btn1.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn2.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn3.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn4.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn5.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn6.png"/></a></li>
+                <!-- <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li> -->
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      <!-- </div> -->
+    </div>
+
+<div data-ride="carousel" class="carousel slide" id="myCarousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li class="" data-slide-to="0" data-target="#myCarousel"></li>
+        <li data-slide-to="1" data-target="#myCarousel" class=""></li>
+        <!-- <li data-slide-to="2" data-target="#myCarousel" class="active"></li> -->
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img alt="First slide" data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" src="img/slider.png">
+          <div class="container">
+            <div class="carousel-caption">
+<!--               <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p> -->
+              <!-- <p><a role="button" href="#" class="btn btn-lg btn-primary">提交點子</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img alt="Second slide" data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNmE2YTZhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a role="button" href="#" class="btn btn-lg btn-primary">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="item">
+          <img alt="Third slide" data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNWE1YTVhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a role="button" href="#" class="btn btn-lg btn-primary">Browse gallery</a></p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <a data-slide="prev" href="#myCarousel" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a data-slide="next" href="#myCarousel" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>    
+
+    <!-- Main jumbotron for a primary marketing message or call to action 
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+      </div>
+    </div>
+-->
+    <div class="">
+      <!-- Example row of columns -->
+<!--       <div class="row">
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        </div> -->
+
+<div class="panel panel-aa">
+  <div class="panel-heading"><img src="img/1/topic_1.png"/></div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src="img/1/image_1.png"/>
+      </div>
+      <div class="col-xs-6">
+        <!-- Table -->
+      <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>
+                  <img src="img/1/sort_1.png"/>
+                  <img src="img/1/sort_2.png"/>
+                  <img src="img/1/sort_3.png"/>
+                  <img src="img/1/sort_4.png"/>                  
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><p>Flappy Bird 已經上架了</p></td>
+              </tr>
+              <tr>
+                <td><p>Jolla 的 The Other Half 背蓋正式上架</p></td>
+              </tr>
+              <tr>
+                <td><p>GoPro 正式在美國交提上市申請</p></td>
+              </tr>
+              <tr>
+                <td><p>最新版程式新增了用戶評價系統</p></td>
+              </tr>
+              <tr>
+                <td><p>雲端儲存 app 加入了相片同步和密碼鎖功能</p></td>
+              </tr>
+              <tr>
+                <td><p>新 Firefox 界面已經可在 Aurora 版本上找到</p></td>
+              </tr>
+              <tr>
+                <td><p>顯示更多&gt;</p></td>
+              </tr>
+            </tbody>
+          
+        </table>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-xs-10">
+    <img src="img/2/topic_2.png"/>
+  </div>
+  <div class="col-xs-2" style="">
+    顯示更多
+    <img src="img/2/left.png"/>
+    <img src="img/2/right.png"/>
+  </div>
+
+  
+
+  <div class="col-xs-3">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_2.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-3">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_3.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+        <div class='ribbon'></div>
+        <div>2013-12-22 15:00PM</div>
+        <p style="word-break: break-all">限時免費填問卷賺外快不求人手機App</p>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="col-xs-3">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_4.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_5.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-xs-3">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_6.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_7.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_8.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_9.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <footer id="footer">
+      <div class="row row-footer">
+        <div class="col-xs-2">
+          <ul>
+            <li class="caption">關於</li>
+            <li><a href="#" class="foot_anchor" target="_blank" hidefocus="true">關於AppsAngel</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">聯絡我們</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">工作</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">成就</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-2">
+          <ul>
+              <li class="caption">幫助</li>
+              <li><a href="#" class="foot_anchor" target="_blank" hidefocus="true">在線討論</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">問與答</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">支援幫助</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">使用條款</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">私隱政策</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">服務協定</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-3">
+          <ul class="ul-discover">
+            <li class="caption">探索</li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">藝術</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">漫畫</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">舞蹈</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">設計</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">時尚</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">電影</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">食物</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">遊戲</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">音樂</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">攝影</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">出版</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">技術</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">劇院</a></li> 
+          </ul>
+        </div>
+        <div class="col-xs-5">
+          <ul class="ul-footer-right">
+          <li class="caption">手機版AppsAngel</li>
+          <li>
+            <div><img src="img/applestore.png"/>
+            <img src="img/googlestore.png"/></div>
+          </li>
+          <li class="caption">社區</li>
+          <li>
+            <a id="c_facebook" href="https://www.facebook.com/wechatapp" target="_blank" hidefocus="true"></a>
+            <a id="c_twitter" href="https://twitter.com/#!/wechatapp" target="_blank" hidefocus="true"></a>
+            <a id="c_googleplus" rel="publisher" href="https://plus.google.com/104362338870206071953" target="_blank" hidefocus="true">Google+</a>
+            <a id="c_instagram" rel="publisher" href="http://instagram.com/wechatapp" target="_blank" hidefocus="true">Instagram</a>
+            <a id="c_zing" style="display:none;" href="//login.me.zing.vn/" target="_blank" hidefocus="true"></a>
+          </li>
+          </ul>
+        </div>
+      </div>
+        
+        <p>&copy; 2014 AppsAngel. All Rights Reserved.</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/jRating.jquery.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

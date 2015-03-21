@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <!-- <meta name="viewport" content="width=device-width"> -->
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/jRating.jquery.css" media="screen" />
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-aa navbar-fixed-top">
+      <!-- <div class="container"> -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span style="font-weight:lighter;">APPS</span><span style="font-weight:bold;">ANGEL</span></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="index.html">主頁</a></li>
+            <li><a href="page2.html">探索</a></li>
+            <li><a href="#menu1">討論</a></li>
+            <li><a href="#menu1">關於</a></li>
+            <li><a href="#menu1">提交</a></li>
+            <!-- <li><a href="#menu1"><img src="img/menu_1.gif"/></a></li>
+            <li><a href="#menu2"><img src="img/menu_2.gif"/></a></li>
+            <li><a href="#menu3"><img src="img/menu_3.gif"/></a></li>
+            <li><a href="#menu4"><img src="img/menu_4.gif"/></a></li>
+            <li><a href="#menu5"><img src="img/menu_5.gif"/></a></li> -->
+
+            
+          </ul>
+          <ul class="nav navbar-nav  navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img style="width: 30px;height: auto;" src="img/menu_6_icon.png"/> 
+                <!-- <span style=""> -->
+                Simon Cheung
+                <!-- </span -->
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="img/menu_btn1.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn2.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn3.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn4.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn5.png"/></a></li>
+                <li><a href="#"><img src="img/menu_btn6.png"/></a></li>
+                <!-- <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li> -->
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      <!-- </div> -->
+    </div>
+
+    
+    <div style="padding-top: 16px;">
+      <!-- Example row of columns -->
+<!--       <div class="row">
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        </div> -->
+
+<div class="row">
+  <div class="col-xs-3 sidebar">
+    <!-- Sidebar -->
+    <ul class="sidebar-nav">
+                <li class="caption"><a href="#">全部</a></li>
+                <li class="caption"><a href="#">最新項目</a></li>
+                <li class="caption"><a href="#">精選項目</a></li>
+                <li class="caption"><a href="#">時下熱門</a></li>
+            </ul>
+            <ul class="sidebar-nav">
+            <li class="caption">類別</li>
+            <li><a href="#" hidefocus="true">藝術</a></li>
+            <li><a href="#" hidefocus="true">漫畫</a></li>
+            <li><a href="#" hidefocus="true">舞蹈</a></li>
+            <li><a href="#" hidefocus="true">設計</a></li>
+            <li><a href="#" hidefocus="true">時尚</a></li>
+            <li><a href="#" hidefocus="true">電影</a></li>
+            <li><a href="#" hidefocus="true">食物</a></li>
+            <li><a href="#" hidefocus="true">遊戲</a></li>
+            <li><a href="#" hidefocus="true">音樂</a></li>
+            <li><a href="#" hidefocus="true">攝影</a></li>
+            <li><a href="#" hidefocus="true">出版</a></li>
+            <li><a href="#" hidefocus="true">技術</a></li>
+            <li><a href="#" hidefocus="true">劇院</a></li>            
+          </ul>
+            <ul class="sidebar-nav">
+            <li class="caption">關鍵字搜尋</li>
+            <li><img src="img/page2/search.png"/></li>
+            </ul>
+  </div>
+  <div class="col-xs-9">
+    <div class="row">
+  <div class="col-xs-10">
+    <img src="img/2/topic_2.png"/>
+  </div>
+  <div class="col-xs-2" style="">
+    <!-- 顯示更多
+    <img src="img/2/left.png"/>
+    <img src="img/2/right.png"/> -->
+  </div>
+  <div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_2.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_3.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+        <div class='ribbon'></div>
+        <div>2013-12-22 15:00PM</div>
+        <p style="word-break: break-all">限時免費填問卷賺外快不求人手機App</p>  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_4.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_5.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_6.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_7.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<br/>
+<div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_8.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_9.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="thumbnail-aa">
+      <img src="img/2/image_1.png" alt="..." style="width:100%;">
+      <div class="well-aa">
+          <div class="basic" data-average="3" data-id="1"></div>
+        </div>
+      <div class="caption">
+        <div style="position:relative;">
+          <div class='ribbon'></div>
+          <span class="title">
+        2013-12-22 15:00PM
+        <img src="img/2/icon-comment.png"/> <span class="badge">12</span>
+        <img src="img/2/icon-flag.png"/> <span class="badge">13</span>
+        </span>
+        <p>限時免費填問卷賺外快不求人手機App</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+</div>
+     
+
+      <hr>
+      <footer id="footer">
+      <div class="row row-footer">
+        <div class="col-xs-2">
+          <ul>
+            <li class="caption">關於</li>
+            <li><a href="#" class="foot_anchor" target="_blank" hidefocus="true">關於AppsAngel</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">聯絡我們</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">工作</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">成就</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-2">
+          <ul>
+              <li class="caption">幫助</li>
+              <li><a href="#" class="foot_anchor" target="_blank" hidefocus="true">在線討論</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">問與答</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">支援幫助</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">使用條款</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">私隱政策</a></li>
+              <li><a href="#" class="foot_anchor" hidefocus="true">服務協定</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-3">
+          <ul class="ul-discover">
+            <li class="caption">探索</li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">藝術</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">漫畫</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">舞蹈</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">設計</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">時尚</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">電影</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">食物</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">遊戲</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">音樂</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">攝影</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">出版</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">技術</a></li>
+            <li><a href="#" class="foot_anchor" hidefocus="true">劇院</a></li> 
+          </ul>
+        </div>
+        <div class="col-xs-5">
+          <ul class="ul-footer-right">
+          <li class="caption">手機版AppsAngel</li>
+          <li>
+            <div><img src="img/applestore.png"/>
+            <img src="img/googlestore.png"/></div>
+          </li>
+          <li class="caption">社區</li>
+          <li>
+            <a id="c_facebook" href="https://www.facebook.com/wechatapp" target="_blank" hidefocus="true"></a>
+            <a id="c_twitter" href="https://twitter.com/#!/wechatapp" target="_blank" hidefocus="true"></a>
+            <a id="c_googleplus" rel="publisher" href="https://plus.google.com/104362338870206071953" target="_blank" hidefocus="true">Google+</a>
+            <a id="c_instagram" rel="publisher" href="http://instagram.com/wechatapp" target="_blank" hidefocus="true">Instagram</a>
+            <a id="c_zing" style="display:none;" href="//login.me.zing.vn/" target="_blank" hidefocus="true"></a>
+          </li>
+          </ul>
+        </div>
+      </div>
+                
+        <p>&copy; 2014 AppsAngel. All Rights Reserved.</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/jRating.jquery.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
