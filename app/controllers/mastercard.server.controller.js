@@ -11,7 +11,7 @@ var mongoose = require('mongoose'),
 var request = require('request'),
     parser = require('xml2json');
 
-var Simplify = require("simplify-commerce"),
+var Simplify = require('simplify-commerce'),
     client = Simplify.getClient({
         publicKey: 'sbpb_MGNiNzhkMGEtNzQwOS00NjMxLTlkMGEtZGVmNTc3MDQ1MmNk',
         privateKey: 'IO6mm2j8xX5p7kZh61HaODLcz+D99k28KcvLgMJTT015YFFQL0ODSXAOkNtXTToq'
@@ -60,7 +60,7 @@ exports.atms = function (req, res) {
 
     request('http://dmartin.org:8021/atms/v1/atm?Format=XML&Country=' + req.query.Country + '&PostalCode=' +
         req.query.Postalcode + '&PageOffset=' + req.query.PageOffset + '&PageLength=' + req.query.PageLength, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
+            if (!error && response.statusCode === 200) {
 
                 //console.log(body)
 
@@ -113,7 +113,7 @@ exports.payment = function (req, res) {
                 //return;
 
                 return res.status(400).send({
-                    message: "Error Message: " + errData.data.error.message
+                    message: 'Error Message: ' + errData.data.error.message
                 });
             } else {
 
@@ -136,7 +136,7 @@ exports.payment = function (req, res) {
 
         }
     );
-}
+};
 
 
 exports.refund = function (req, res) {
@@ -163,7 +163,7 @@ exports.refund = function (req, res) {
 
 
                 return res.status(400).send({
-                    message: "Error Message: " + errData.data.error.message
+                    message: 'Error Message: ' + errData.data.error.message
                 });
             } else {
 
@@ -188,5 +188,5 @@ exports.refund = function (req, res) {
 
         }
     );
-}
+};
 

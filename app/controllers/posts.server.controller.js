@@ -9,6 +9,7 @@ var mongoose = require('mongoose'),
     url = require('url'),
 	errorHandler = require('./errors.server.controller'),
 	Post = mongoose.model('Post'),
+    Thread = mongoose.model('Thread'),
 	_ = require('lodash');
 
 
@@ -98,7 +99,7 @@ var crawlHkepc = function (page) {
                 }
             );
         }
-    }
+    };
 
 
     var baseUrl = 'http://www.hkepc.com/forum/';
