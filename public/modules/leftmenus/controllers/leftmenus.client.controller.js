@@ -9,7 +9,11 @@ angular.module('leftmenus').controller('LeftmenusController', ['$scope', '$state
 		$scope.create = function() {
 			// Create new Leftmenu object
 			var leftmenu = new Leftmenus ({
-				name: this.name
+				name: this.name,
+                icon: this.icon,
+                type: this.type,
+                method: this.method,
+                caption: this.caption
 			});
 
 			// Redirect after save

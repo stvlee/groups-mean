@@ -13,6 +13,8 @@ var mongoose = require('mongoose'),
  */
 exports.create = function(req, res) {
 	var leftmenu = new Leftmenu(req.body);
+    console.info(req.body);
+
 	leftmenu.user = req.user;
 
 	leftmenu.save(function(err) {
