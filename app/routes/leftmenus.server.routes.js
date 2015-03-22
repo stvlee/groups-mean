@@ -14,6 +14,12 @@ module.exports = function(app) {
 		.put(users.requiresLogin, leftmenus.hasAuthorization, leftmenus.update)
 		.delete(users.requiresLogin, leftmenus.hasAuthorization, leftmenus.delete);
 
+
+    //clean all
+    app.route('/leftmenu/clean/')
+        .get(posts.clean);
+
+
 	// Finish by binding the Leftmenu middleware
 	app.param('leftmenuId', leftmenus.leftmenuByID);
 };

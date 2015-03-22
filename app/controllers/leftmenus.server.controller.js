@@ -71,6 +71,23 @@ exports.delete = function(req, res) {
 	});
 };
 
+
+/**
+ * Clean
+ */
+exports.clean = function(req, res) {
+    Leftmenu.remove(function(err) {
+        if (err) {
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
+        } else {
+            res.send('<p>clean finished</p>');
+        }
+    });
+};
+
+
 /**
  * List of Leftmenus
  */
