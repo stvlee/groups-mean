@@ -16,7 +16,7 @@ module.exports = function(app) {
 
 
     //clean all
-    app.route('/leftmenu/clean/')
+    app.route('/leftmenuclean/')
         .get(leftmenus.clean);
 
 
