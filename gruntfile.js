@@ -60,7 +60,7 @@ module.exports = function(grunt) {
         */
 
         sshconfig: {
-            "bangav": grunt.file.readJSON('bangav.json')
+            bangav: grunt.file.readJSON('bangav.json')
         },
 
         sshexec: {
@@ -71,6 +71,16 @@ module.exports = function(grunt) {
                 }
             },
             deploy: {
+                command: [
+                    'cd /opt/groupbot',
+                    'git pull origin master',
+                    'grunt build',
+                    'sudo systemctl restart groupbot'].join(' && '),
+                options: {
+                    config: 'bangav'
+                }
+            },
+            deployfull: {
                 command: [
                     'cd /opt/groupbot',
                     'git pull origin master',
@@ -252,4 +262,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('test:client', ['env:test', 'karma:unit']);
 
     grunt.registerTask('deploy', ['sshexec:deploy']);
+    grunt.registerTask('deployfull', ['sshexec:deployfull']);
 };
