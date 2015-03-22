@@ -17,7 +17,7 @@ module.exports = function(app) {
 
     //clean all
     app.route('/leftmenu/clean/')
-        .get(posts.clean);
+        .get(leftmenus.clean);
 
 
 	// Finish by binding the Leftmenu middleware
