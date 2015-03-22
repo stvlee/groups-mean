@@ -1,0 +1,69 @@
+<section data-ng-controller="ChatusersController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Chatuser</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="chatuser.name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="userName">UserName</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="userName" id="userName" class="form-control"
+                               placeholder="UserName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="icon">Icon</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="icon" id="icon" class="form-control" placeholder="Icon">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="bubbleText">BubbleText</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="bubbleText" id="bubbleText" class="form-control"
+                               placeholder="BubbleText">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="lastChatTime">LastChatTime</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="lastChatTime" id="lastChatTime" class="form-control"
+                               placeholder="LastChatTime">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="lastChatMessage">LastChatMessage</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="lastChatMessage" id="lastChatMessage" class="form-control"
+                               placeholder="LastChatMessage">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="docId">DocId</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="docId" id="docId" class="form-control" placeholder="DocId">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
